@@ -1,42 +1,66 @@
-# I Hate Comments (Smart Comment Remover)
+<p align="center">
+  <img src="./Untitled design.png" width="380" alt="I Hate Comments Header">
+</p>
 
-A fast, deterministic, language-aware VS Code extension that removes single-line and multi-line comments from selected code snippets or entire files without using AI.
+<h1 align="center">I Hate Comments</h1>
 
-## ✨ Features
+<p align="center">
+  <b>Because your code should explain itself, and comments are just essays written by developers who love typing.</b>
+</p>
 
-- **Context Menu Integration**: Right-click on any selection or open document and choose **Remove Comments**.
-- **30+ Language Support**: Handles JavaScript, TypeScript, Python, HTML, C, C++, Java, C#, Go, Rust, PHP, SQL, Ruby, Lua, Shell, Haskell, YAML, and more.
-- **String & URL Safe**: Character-level state machine guarantees that `#`, `//`, or `/*` inside string literals (`"https://..."`) are **never** deleted.
-- **Shebang & Directives Preservation**: Configurable settings to preserve `#!/usr/bin/env` shebangs and linter directives (`eslint-disable`, `@ts-ignore`).
+---
 
-## 🚀 How to Use
+## Why This Exists
 
-1. Highlight code in VS Code (or leave nothing selected to process the full file).
-2. Right-click and select **Remove Comments** (or press `Ctrl+Shift+P` -> type `Remove Comments`).
+- **Comments Lie**: Code changes, comments stay outdated for eternity.
+- **Save Bandwidth**: Why transmit 500 lines of developer diary entries to production?
+- **AI Is Overkill**: You do not need a massive language model just to delete <code>// TODO: fix this later</code>.
+- **Pure Syntax Engine**: Strips comments deterministically without touching URLs, strings, or shebangs.
 
-## ⚙️ Extension Settings
+---
 
-- `smartCommentRemover.preserveShebang`: Keep shebang lines at the top of files. (default: `true`)
-- `smartCommentRemover.preserveDirectives`: Keep linter/compiler directives like `eslint-disable` or `@ts-ignore`. (default: `false`)
-- `smartCommentRemover.collapseEmptyLines`: Remove empty lines created by removing comments. (default: `true`)
+## What It Does
 
-## 🛠️ Development & Building
+- **One-Click Purge**: Right-click any selection or document and select <b>Remove Comments</b>.
+- **30+ Language Rules**: Full support for JavaScript, TypeScript, Python, HTML, CSS, C/C++, Java, Go, Rust, PHP, SQL, Lua, Shell, and more.
+- **String & URL Safe**: Advanced state-machine parser guarantees strings like <code>"https://example.com#section"</code> are never ruined.
+- **Directive Aware**: Option to keep critical linter rules (like <code>eslint-disable</code> or <code>@ts-ignore</code>) while erasing everything else.
+
+---
+
+## Quick Usage
+
+1. Open any file in VS Code.
+2. Select a block of code (or leave unselected to process the whole file).
+3. Right-click anywhere and choose <b>Remove Comments</b>.
+4. Watch the fluff disappear.
+
+---
+
+## Configuration
+
+Custom options accessible via VS Code Settings:
+
+| Setting Key | Default | Description |
+|---|---|---|
+| <code>smartCommentRemover.preserveShebang</code> | <code>true</code> | Keeps top shebang lines like <code>#!/usr/bin/env node</code> intact |
+| <code>smartCommentRemover.preserveDirectives</code> | <code>false</code> | Preserves linter/compiler flags like <code>eslint-disable</code> |
+| <code>smartCommentRemover.collapseEmptyLines</code> | <code>true</code> | Collapses blank lines created by comment removal |
+
+---
+
+## Local Development
 
 ```bash
-# Clone the repository
 git clone https://github.com/TanmoyFRu/I-Hate-Comments.git
 cd I-Hate-Comments
-
-# Install dependencies
 npm install
-
-# Run unit tests
-npm test
-
-# Compile TypeScript
 npm run compile
+npm test
 ```
 
-## 📜 License
+---
+
+## License
 
 MIT
