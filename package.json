@@ -1,0 +1,75 @@
+{
+  "name": "smart-comment-remover",
+  "displayName": "Smart Comment Remover",
+  "description": "Deterministic, language-aware comment removal extension for VS Code without using AI.",
+  "version": "1.0.0",
+  "publisher": "TanmoyFRu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TanmoyFRu/I-Hate-Comments.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TanmoyFRu/I-Hate-Comments/issues"
+  },
+  "homepage": "https://github.com/TanmoyFRu/I-Hate-Comments#readme",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Formatters",
+    "Programming Languages",
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      {
+        "command": "smartCommentRemover.removeComments",
+        "title": "Remove Comments",
+        "category": "Smart Comment Remover"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "smartCommentRemover.removeComments",
+          "group": "1_modification",
+          "when": "editorTextFocus"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Smart Comment Remover",
+      "properties": {
+        "smartCommentRemover.preserveShebang": {
+          "type": "boolean",
+          "default": true,
+          "description": "Preserve shebang lines (e.g., #!/usr/bin/env node) at the top of files."
+        },
+        "smartCommentRemover.preserveDirectives": {
+          "type": "boolean",
+          "default": false,
+          "description": "Preserve linter/compiler directive comments (e.g. eslint-disable, @ts-ignore)."
+        },
+        "smartCommentRemover.collapseEmptyLines": {
+          "type": "boolean",
+          "default": true,
+          "description": "Remove leftover blank lines created when removing full-line comments."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -w -p ./",
+    "test": "npx ts-node src/test/parser.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "@types/vscode": "^1.75.0",
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.2"
+  }
+}
