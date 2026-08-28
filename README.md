@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./Untitled design.png" width="380" alt="I Hate Comments Header" style="border: 3px solid #ffffff; border-radius: 10px;">
+  <img src="./Untitled design.png" width="300" alt="I Hate Comments Header" style="border: 2px solid #ffffff; padding: 8px; background: #000000; border-radius: 12px;">
 </p>
 
 <h1 align="center">I Hate Comments</h1>
