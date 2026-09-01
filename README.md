@@ -1,6 +1,6 @@
 <p align="center">
   <kbd>
-    <img src="./asset/Untitled design.png" width="300" alt="I Hate Comments Header">
+    <img src="https://raw.githubusercontent.com/TanmoyFRu/I-Hate-Comments/main/asset/header.png" width="300" alt="I Hate Comments Header">
   </kbd>
 </p>
 
