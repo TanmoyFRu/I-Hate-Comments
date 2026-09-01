@@ -1,9 +1,24 @@
 {
-  "name": "smart-comment-remover",
-  "displayName": "Smart Comment Remover",
-  "description": "Deterministic, language-aware comment removal extension for VS Code without using AI.",
-  "version": "1.0.0",
-  "publisher": "TanmoyFRu",
+  "name": "i-hate-comments",
+  "displayName": "I-Hate-Comments - Smart Comment Remover",
+  "description": "Fast, deterministic comment remover to strip and remove comments, clean code, and delete inline or block comments across JavaScript, Python, HTML, C++, and 30+ languages.",
+  "version": "1.0.2",
+  "publisher": "TanmoyDebnath",
+  "keywords": [
+    "comment remover",
+    "remove comments",
+    "no comment",
+    "strip comments",
+    "delete comments",
+    "comment cleaner",
+    "clean code",
+    "uncomment",
+    "remove-comments",
+    "code cleanup",
+    "formatter",
+    "minify"
+  ],
+  "icon": "asset/icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/TanmoyFRu/I-Hate-Comments.git"
@@ -64,11 +79,13 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -w -p ./",
-    "test": "npx ts-node src/test/parser.test.ts"
+    "test": "npx ts-node src/test/parser.test.ts",
+    "package": "vsce package"
   },
   "devDependencies": {
     "@types/node": "^18.19.0",
     "@types/vscode": "^1.75.0",
+    "@vscode/vsce": "^2.32.0",
     "typescript": "^5.3.3",
     "ts-node": "^10.9.2"
   }

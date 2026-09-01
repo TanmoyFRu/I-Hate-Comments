@@ -31,10 +31,13 @@ const PYTHON_STYLE: LanguageCommentSyntax = {
   ],
 };
 
-// HTML / XML style: <!-- -->
+// HTML / XML style: <!-- -->, /* */, and //
 const HTML_STYLE: LanguageCommentSyntax = {
-  singleLine: [],
-  block: [{ start: '<!--', end: '-->' }],
+  singleLine: ['//'],
+  block: [
+    { start: '<!--', end: '-->' },
+    { start: '/*', end: '*/' },
+  ],
 };
 
 // SQL style: -- and /* */

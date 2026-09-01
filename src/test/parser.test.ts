@@ -71,17 +71,25 @@ val = "Hash # inside string"
   });
 
   // Test 4: HTML comment removal
-  test('HTML: remove <!-- --> comments', () => {
+  test('HTML: remove <!-- --> and /* */ comments', () => {
     const input = `
+/* Container */
 <div>
   <!-- Header comment -->
   <h1>Title</h1>
+  <style>
+    /* CSS comment */
+    .container { margin: 0; }
+  </style>
 </div>
     `.trim();
 
     const expected = `
 <div>
   <h1>Title</h1>
+  <style>
+    .container { margin: 0; }
+  </style>
 </div>
     `.trim();
 
